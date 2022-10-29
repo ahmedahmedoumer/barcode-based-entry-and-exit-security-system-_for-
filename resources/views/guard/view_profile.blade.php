@@ -63,7 +63,7 @@
                   <p class="mb-0">Phone</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{$product_id->phone_no}}</p>
+                  <p class="text-muted mb-0">{{"+251".$product_id->phone_no}}</p>
                 </div>
               </div>
               <hr>

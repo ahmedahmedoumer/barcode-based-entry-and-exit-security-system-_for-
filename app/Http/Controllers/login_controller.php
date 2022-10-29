@@ -57,8 +57,7 @@ class login_controller extends Controller
                 $request->session()->put('msg',$data);
                 $request->Session()->put('news',$news_);
                 $request->Session()->push('login_id',$users);
-
-                return view('/admin/dashboard');
+            return redirect('/dashboard');
         }
         else if($user->role=='2'){
             $request->session()->flush();
@@ -79,7 +78,7 @@ class login_controller extends Controller
             $request->Session()->put('counts',$counts);
             $request->Session()->put('reply',$reply);
 
-            return view('/guard/security_guard');
+            return redirect('/guard-dashboard');
         }
         else if($user->role=='3'){
             $users=DB::table('users')->join('user_details','users.id','=','user_details.user_id')
@@ -118,5 +117,31 @@ class login_controller extends Controller
     else{
         return view('/login')->with('login_error','please fill correct username or password and try again  !!');
     }
+}
+
+public function dashboard(){
+       $attendance_detail=DB::table('make_attendance')->where('status',"out")->count();
+       $news=news::all()->count();
+       $comments=comment::all()->count();
+       $users=users::all()->count();
+        // $data=array('attendance_detail'=>$attendance_detail,
+        //              'news'=>$news,
+        //              'comments'=>$comments,
+        //              'no_users'=>$users);
+            return view('/admin.dashboard')->with('attendance_detail', $attendance_detail)
+                                            ->with('news',$news) 
+                                            ->with('comments',$comments)
+                                            ->with('no_users',$users);                       
+        
+}
+
+public function staff_dashboard(){
+    $attendance_detail=DB::table('make_attendance')->where('status',"out")->count();
+    $news=news::all()->count();
+    $users=users::all()->count();
+         return view('/guard.dashboard')->with('attendance_detail', $attendance_detail)
+                                         ->with('news',$news) 
+                                         ->with('no_users',$users);                       
+  
 }
 }

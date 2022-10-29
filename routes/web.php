@@ -38,7 +38,7 @@ Route::get('/', function () {
         });
 Route::any('download/{id}', [download::class,'downloadFile']);
 Route::post('/get-verification-code', [activate::class, 'activate_account'])->name('/get-verification-code');
-Route::get('/activate-account', function (Request $request){
+Route::get('/activate-account', function (){
     return view('view.activate_account');
 });
 Route::get('/News', [wellcomeController::class,'wellcome']);
@@ -65,9 +65,9 @@ Route::get('/admin-update-profile-page', function(){
 })->name('/admin-update-profile-page');
 // Route::post('/view-detail/{id}',
 Route::any('search', [searchController::class,'search'])->name('search')->Middleware('authentication');
-Route::get('/dashboard', function () {
-    return view('/admin/dashboard');
-});
+Route::get('/dashboard', [login_controller::class,'dashboard']);
+//     return view('/admin/dashboard');
+// });
 Route::get('/print-page',function(){
      return view('/print');
 });
@@ -134,7 +134,7 @@ Route::get('/Generate_report/{schedule}', [UsersController::class,'Make_report']
 
 
 
-
+Route::get('/guard-dashboard', [login_controller::class,'staff_dashboard']);
 Route::post('/update-guard-profile', [update_profile::class, 'update_profile'])->name('update_guard_profile');
 Route::get('/guard/update-profile', function(){
        return view('/guard.update_profile');
@@ -145,9 +145,6 @@ Route::get('guard/show-reply', function(){
 Route::get('/guard/show_news', function() {
     return view('guard.show_notification');
 })->name('guard.show_news');
-Route::get('/guard-dashboard', function(){
-     return view('guard.security_guard');
-});
 Route::get('/view-profile', function (){
      return view('guard.view_profile');
 });

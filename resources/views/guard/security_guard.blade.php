@@ -9,13 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <i class="bi bi-key-fill"></i><title>Kiot security system</title>
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    
 </head>
 <body id="page-top">
     <!-- Page Wrapper -->
@@ -37,7 +38,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="/guard-dashboard">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="bi-grid"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -47,11 +48,11 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="bi-people"></i>
                     <span>Accounts</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+                    <div class="bg-primary py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/view-profile">view profile</a>
                         <a class="collapse-item" href="/give-comment">give Comment</a>
                     </div>
@@ -69,7 +70,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/contact">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="bi-person-fill"></i>
                     <span>Contact</span></a>
             </li>
 
@@ -360,50 +361,6 @@
                        }, 1000);
     
 </script>
-
-        
-    <!-- Bootstrap core JavaScript-->
-    <!-- <script type=""charset="utf-8">
-        let a;
-        let time;
-        let min;
-        let hours;
-        console.log("ahmedin"); 
-    //     document.getElementById('seter').innerHTML="ahmedin";
-
-    //    alert("hello");
-    //   var today = new Date();
-    //   var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-
-    //    console.log(time);
-
-        // let ho=document.getElementById('seter1').innerHTML;
-        // let mi=document.getElementById('seter2').innerHTML;
-        // let se=document.getElementById('seter3').innerHTML;
-        // const hour = parseInt(ho, 10);
-        // const minu = parseInt(mi, 10);
-        // const sec = parseInt(se, 10);
-        // const all_second=hour*3600+minu*60+sec;
-        // let all_times=all_second;
-        // // document.getElementById('seter123').innerHTML=entry_time;
-        // // alert(all_seconds);
-        // if(x>0;true:false);
-        
-        //    setInterval(() => {
-                    
-        //          let houring=parseInt((all_times/3600),10);
-        //          let all_min=parseInt(((all_times%3600)/60),10);
-        //          let all_seconds=parseInt(((all_times%3600)%60),10);
-        //          if(houring<10?"0"+houring:houring;
-        //          if(all_min<10?"0"+all_min:all_min;
-        //          if(all_seconds<10?"0"+all_seconds:all_seconds;
-        //           let time_left=houring + ":" + all_min + ":" + all_seconds;
-                  
-        //         //   console.log(time_left);
-        //            all_times--;
-            
-        //    }, 1000);
-      </script> -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
